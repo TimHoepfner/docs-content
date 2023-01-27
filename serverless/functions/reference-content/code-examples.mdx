@@ -74,7 +74,7 @@ return {
 }
 ```
 
-## Getting data
+## Getting data in Python
 
 **Using environment variables**
 
@@ -98,7 +98,7 @@ def handle(event, context):
   }
 ```
 
-### Using event objects
+### Using event objects in Python
 
 With event objects you can pass information through your HTTP request. They are composed of the following objects:
 
@@ -355,7 +355,7 @@ module.exports.myHandler = (event, context, callback) => {
 }
 ```
 
-### Using event components
+### Using event components in Node
 
 With the event object you can pass information through your HTTP request. It is composed of the following objects:
 
@@ -562,7 +562,7 @@ Suggested code layout:
    └── hello.go   # with files inside
 ```
 
-### Hello world
+### Hello world in Go
 
 ```go
 package myfunc
@@ -599,7 +599,7 @@ You must use the [`w http.ResponseWriter`](https://pkg.go.dev/net/http#ResponseW
 
 Our Go runtime is based on AWS lambda's, hence you will find similarities between the two runtimes.
 
-### Hello world
+### Hello world in Go (< 1.17)
 
 Every handler must be in its package, identified by `package main`, and exporting a main function with the following `lambda.Start` statement:
 
@@ -690,7 +690,7 @@ func main() {
 
 ```
 
-### Using event components (Body, Url …)
+### Using event components (Body, Url …) in Go
 
 With the `APIGatewayProxyRequest` structure, you can pass information through your HTTP request:
 * `Resource`: string - Resource path defined in API Gateway
@@ -864,7 +864,7 @@ func main() {
 
 ## Rust
 
-### Hello world
+### Hello world in Rust
 
 ```rust
 use hyper::{
@@ -885,7 +885,7 @@ pub async fn handle(_req: Request<Body>) -> Response<Body> {
 PHP runtime supports composer dependency management.
 Adding `composer.json` in your project will automatically fetch dependencies.
 
-### Returning a function result in Python
+### Returning a function result in PHP
 
 **Response object with HTTP information:**
 
@@ -900,10 +900,9 @@ function handle($event, $context) {
 }
 ```
 
-## Getting data
+## Using global variables in PHP
+The PHP runtime provides superglobals you can access.
 **Using environment variables**
-
-Python runtime includes the `os`, which enables you to access the environment variables you define in your namespaces or functions.
 
 The following snippet returns the environment variable `ENV` you specified in the function or namespace configuration:
 ```php
@@ -918,7 +917,7 @@ function handle($event, $context) {
 }
 ```
 
-### Using event objects
+### Using event objects in PHP
 
 With event objects you can pass information through your HTTP request. They are composed of the following objects:
 
@@ -945,7 +944,7 @@ function handle($event, $context) {
 }
 ```
 
-### Using data from CRON jobs in Python
+### Using data from CRON jobs in PHP
 
 CRON jobs share the same pattern as HTTP calls. You can find the information passed into the CRON body in the event object:
 
